@@ -1,41 +1,55 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
-
-# dependencies
-/node_modules
-/.pnp
+# --- Dependencies ---
+node_modules/
+.pnp
 .pnp.*
+
+# --- Yarn / PNPM Artifacts ---
 .yarn/*
 !.yarn/patches
 !.yarn/plugins
 !.yarn/releases
 !.yarn/versions
+.pnpm-debug.log*
 
-# testing
-/coverage
+# --- Build Outputs ---
+.next/
+out/
+build/
+dist/
 
-# next.js
-/.next/
-/out/
+# --- Environment & Secrets ---
+.env
+.env.local
+.env.development
+.env.production
+.env.test
+.env.*          # ignore all real env files
+!.env.example    # but keep the example checked in ✅
 
-# production
-/build
-
-# misc
-.DS_Store
-*.pem
-
-# debug
+# --- Logs & Debug ---
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-.pnpm-debug.log*
+*.log
 
-# env files (can opt-in for committing if needed)
-.env*
+# --- OS / Editor Files ---
+.DS_Store
+Thumbs.db
+*.pem
+*.key
 
-# vercel
-.vercel
+# --- Testing ---
+coverage/
+jest-html-reporters-*.html
 
-# typescript
+# --- Prisma ---
+prisma/dev.db
+prisma/migrations/.DS_Store
+prisma/migrations/*/steps.json
+
+# --- Vercel / Deployment ---
+.vercel/
+
+# --- TypeScript ---
 *.tsbuildinfo
 next-env.d.ts
