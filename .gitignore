@@ -53,3 +53,5 @@ prisma/migrations/*/steps.json
 # --- TypeScript ---
 *.tsbuildinfo
 next-env.d.ts
+
+/lib/generated/prisma
